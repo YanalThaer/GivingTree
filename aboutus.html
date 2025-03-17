@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Turning Hunger Into Hope</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    
+    :root {
+      --primary: #2C3E50;
+      --secondary: #5C8374;
+      --accent: #F9B208;
+      --background: #F8F9FA;
+      --text: #333;
+      --light: #fff;
+    }
+    
+    body {
+      background-color: var(--background);
+      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('mosque-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--light);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.countdown-container {
+    background-color: var(--primary);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: -50px auto 0;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+}
+
+.countdown-item {
+    text-align: center;
+}
+
+.countdown-item span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+nav {
+    background-color: var(--light);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+    
+    .page-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/api/placeholder/1600/400') center/cover no-repeat;
+      opacity: 0.2;
+      z-index: 0;
+    }
+    
+    .page-header h1 {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section-title {
+      color: var(--primary);
+      border-bottom: 3px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .about-section {
+      background-color: var(--light);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    
+    .mission-card {
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background-color: rgba(92, 131, 116, 0.1);
+      border-radius: 5px;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--light);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .stat-card .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    
+    .stat-card .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .team-member {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .team-member img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .team-member .member-name {
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+    
+    .team-member .member-title {
+      color: var(--secondary);
+      font-style: italic;
+    }
+    
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 4px;
+      background: var(--secondary);
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+    }
+    
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .timeline-content {
+      background: var(--light);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+      width: 45%;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-left: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-right: auto;
+    }
+    
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      top: 20px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      left: -60px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content::before {
+      right: -60px;
+    }
+    
+    .timeline-year {
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    
+    .cta-section {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 3rem 0;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    
+    .cta-btn {
+      background-color: var(--accent);
+      color: var(--primary);
+      border: none;
+      border-radius: 5px;
+      padding: 0.75rem 2rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-btn:hover {
+      background-color: #e9a400;
+      transform: translateY(-2px);
+    }
+    
+    .partner-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      padding: 1rem;
+      background-color: var(--light);
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+    
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 70px;
+    }
+    
+    .home-icon {
+      font-size: 1.5rem;
+    }
+    
+    .values-list li {
+      margin-bottom: 1rem;
+    }
+    
+    .values-list li i {
+      color: var(--accent);
+      margin-right: 0.5rem;
+    }
+    
+    .certificate-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: var(--secondary);
+      color: var(--light);
+      border-radius: 5px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+        transform: none;
+      }
+      
+      .timeline-content {
+        width: 90%;
+        margin-left: 40px !important;
+        margin-right: auto !important;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content::before,
+      .timeline-item:nth-child(even) .timeline-content::before {
+        left: -30px;
+        right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">Ramadan Volunteers</div>
+        <ul class="nav-links">
+            <li><a href="#opportunities">Opportunities</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#signup">Sign Up</a></li>
+            <li><a href="#prayer-times">Prayer Times</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container text-center">
+      <h1 class="display-4">About Us</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- About Us Section -->
+    <section class="about-section">
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="section-title">Our Story</h2>
+          <p>Founded in 2010, FoodShare was established in response to the growing need for food assistance in local communities. What began as a small initiative led by a group of dedicated volunteers has quickly grown into one of the region's most important charitable organizations fighting hunger.</p>
+          <p>Over the years, our programs and services have expanded to meet the needs of vulnerable and disadvantaged families while maintaining our core vision of turning hunger into hope through the provision of food packages and sustainable nutrition programs.</p>
+          <p>Today, we work with a network of community partners, food producers, volunteers, and donors to create lasting solutions to food insecurity while addressing immediate needs.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="mission-card mb-4">
+            <h3>Our Vision</h3>
+            <p>A community free from hunger, where every individual has access to food security and proper nutrition to live with dignity and productivity.</p>
+          </div>
+          <div class="mission-card">
+            <h3>Our Mission</h3>
+            <p>We strive to combat hunger and food insecurity by providing emergency food assistance, implementing sustainable programs, and building partnerships that empower communities to achieve self-sufficiency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="about-section">
+      <h2 class="section-title">Our Core Values</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-unstyled values-list">
+            <li><i class="fas fa-check-circle"></i> <strong>Compassion:</strong> We approach our work with empathy and respect for the dignity of those we serve.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Integrity:</strong> We uphold the highest ethical standards in all our operations and relationships.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Collaboration:</strong> We believe in the power of partnerships to achieve our mission effectively.</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-unstyled values-list">
+            <li><i class="fas fa-check-circle"></i> <strong>Innovation:</strong> We continuously seek creative solutions to address the root causes of hunger.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Accountability:</strong> We are committed to transparency and responsible stewardship of resources.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Inclusivity:</strong> We serve all people in need without discrimination.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-4">
+        <h4>Certifications & Recognitions</h4>
+        <div>
+          <span class="certificate-badge"><i class="fas fa-medal"></i> Charity Excellence Award 2023</span>
+          <span class="certificate-badge"><i class="fas fa-certificate"></i> ISO 9001 Certified</span>
+          <span class="certificate-badge"><i class="fas fa-star"></i> 4-Star Charity Rating</span>
+        </div>
+      </div>
+    </section>
+
+   
