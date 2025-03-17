@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Donation - Caring Hearts Charity</title>
+    <link rel="stylesheet" href="/style.css">   
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    
+    
+        <div class="container">
+            
+                <img src="/tree1.jpg" alt="Caring Hearts Charity  "  style="width: 100%; height: 350px;">
+               
+        </div>
+    
+
+    <!-- Donation Section -->
+    <section class="donation-section">
+        <div class="container">
+            <div class="donation-container">
+                <div class="section-title">
+                    <h2>Your Support Changes Lives</h2>
+                    <p>Every donation makes a difference. Choose an amount below or enter a custom amount.</p>
+                </div>
+
+                <form class="donation-form">
+                    <div class="form-group">
+                        <label>Select Donation Amount</label>
+                        <div class="amount-options">
+                            <div class="amount-option">
+                                <input type="radio" name="amount" id="amount-10" value="10">
+                                <label for="amount-10">$10</label>
+                            </div>
+                            <div class="amount-option">
+                                <input type="radio" name="amount" id="amount-20" value="20">
+                                <label for="amount-20">$20</label>
+                            </div>
+                            <div class="amount-option">
+                                <input type="radio" name="amount" id="amount-50" value="50" checked>
+                                <label for="amount-50">$50</label>
+                            </div>
+                            <div class="amount-option">
+                                <input type="radio" name="amount" id="amount-100" value="100">
+                                <label for="amount-100">$100</label>
+                            </div>
+                        </div>
+                        
+                        <div class="custom-amount">
+                            <input type="radio" name="amount" id="amount-custom" value="custom">
+                            <label for="amount-custom">
+                                Custom Amount
+                                <input type="number" class="custom-amount-input" placeholder="Enter amount" >
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Donation Frequency</label>
+                        <div class="donation-frequency">
+                            <div class="frequency-option">
+                                <input type="radio" name="frequency" id="one-time" value="one-time" checked>
+                                <label for="one-time">One-time</label>
+                            </div>
+                            <div class="frequency-option">
+                                <input type="radio" name="frequency" id="monthly" value="monthly">
+                                <label for="monthly">Monthly</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Personal Information</label>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <input type="text" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="form-col">
+                                <input type="text" class="form-control" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Phone Number (Optional)">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Complete Donation</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+ </html>
