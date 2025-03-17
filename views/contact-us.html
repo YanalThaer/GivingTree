@@ -17,10 +17,11 @@
         <div class="nav-container">
             <div class="logo"><a href="../index.html" style="text-decoration: none; color: #F9B208;">Giving Hands</a></div>
             <ul class="nav-links">
-                <li><a href="#opportunities">My volunteers</a></li>               
+                <li><a href="../index.html">Home</a></li>               
                 <li><a href="../views/aboutus.html">About Us</a></li>
                 <li><a href="../views/contact-us.html">Contact</a></li>
-                <li><a href="../views/login.html">Login</a></li>
+                <li><a href="../views/testomonial.html">Testimonials</a></li>
+                <li><a href="../views/login.html" class="login-link">Login</a></li>
             </ul>
         </div>
     </nav>
@@ -111,5 +112,42 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("rDXnoVX1oF94FtTu6"); 
+
+    document.getElementById("contactForm").addEventListener("submit", sendMail);
+});
+
+function sendMail(event) {
+    event.preventDefault(); 
+
+    let name = document.getElementById("uname").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+
+    document.getElementById("loading").style.display = "block";
+
+    emailjs.send("service_2btuga2", "template_0ttnq6j", {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message
+    }).then(function(response) {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("feedback").textContent = "✅ Your message was sent successfully!";
+        document.getElementById("contact-form").reset(); 
+    }).catch(function(error) {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("feedback").textContent = "There was a transmission error. Try again.";
+        console.log(error);
+    });
+}
+    </script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </body>
 </html>
