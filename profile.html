@@ -329,14 +329,13 @@
         <div class="profile-container">
             <div class="profile-sidebar">
                 <div class="profile-image">
-                    <img src="" alt="Profile Picture">
+                    <img id="profilePicture" src="default-avatar.png" alt="Profile Picture">
                 </div>
+                <input type="file" id="uploadPhoto" accept="image/*" style="display: none;" onchange="previewImage(event)">
+                <button class="button" onclick="document.getElementById('uploadPhoto').click()">Upload Photo</button>
                 <div class="profile-name">Samira Ahmed</div>
                 <div class="profile-status">Active Volunteer</div>
-                
-                
             </div>
-            
             <div class="profile-content">
                
                 
