@@ -8,72 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .contact-section {
-            padding: 80px 0;
-        }
-        .contact-info {
-            height: 100%;
-            background-color: #F9B208;
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
-        .contact-form {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-          
-        }
-
-        #tecolor {
-            color: #5C8374;
-        }
-        .section-title {
-            margin-bottom: 40px;
-            text-align: center;
-            color: white;
-            -webkit-text-stroke: 2px #F9B208;
-        }
-        .info-item {
-            margin-bottom: 25px;
-        }
-        .info-item i {
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-decoration: none;
-          
-        }
-        .form-control {
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-        }
-        .btn-submit {
-            background-color: #2C3E50;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .btn-submit:hover {
-            background-color: #5C8374;
-        }
-        @media (max-width: 768px) {
-            .contact-info {
-                margin-bottom: 30px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/contact-style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="../index.html" style="text-decoration: none; color: #F9B208;">Giving Hands</a></div>
+            <ul class="nav-links">
+                <li><a href="#opportunities">My volunteers</a></li>               
+                <li><a href="../views/aboutus.html">About Us</a></li>
+                <li><a href="../views/contact-us.html">Contact</a></li>
+                <li><a href="../views/login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <section class="contact-section">
         <div class="container">
             <div class="section-title">
@@ -144,6 +95,19 @@
             </div>
         </div>
     </section>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ramadan Volunteer Hub. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

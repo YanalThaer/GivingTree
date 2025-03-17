@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التبرع بالملابس</title>
+    <link rel="stylesheet" href="../css/donate-style.css">
+</head>
+<body>
+    <header>
+        <h1>👕 التبرع بالملابس</h1>
+        <nav>
+            <a href="../index.html">الرئيسية</a>
+            <a href="activities.html">الأنشطة</a>
+            <a href="profile.html">ملفي الشخصي</a>
+        </nav>
+    </header>
+
+    <section class="donation-form">
+        <h2>🧥 سجل تبرعك بالملابس</h2>
+        <form id="donationForm">
+            <label>📌 اسم المتبرع:</label>
+            <input type="text" id="donorName" placeholder="أدخل اسمك" required>
+
+            <label>📍 موقع التسليم:</label>
+            <input type="text" id="location" placeholder="أدخل موقع التسليم" required>
+
+            <label>📷 صورة الملابس المتبرع بها:</label>
+            <input type="file" id="clothesImage" accept="image/*" title="اختر صورة الملابس">
+
+            <label>📝 ملاحظات إضافية:</label>
+            <textarea id="notes" placeholder="أدخل أي ملاحظات حول التبرع"></textarea>
+
+            <button type="submit">📩 إرسال التبرع</button>
+        </form>
+        <p id="successMessage" style="display:none; color:green; margin-top:10px;">✅ تم تسجيل تبرعك بنجاح!</p>
+    </section>
+
+    <footer>© 2025 تحدي الخير - جميع الحقوق محفوظة</footer>
+
+    <script src="../js/donate-js.js"></script>
+</body>
+</html>

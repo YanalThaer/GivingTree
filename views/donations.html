@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة التبرعات</title>
+    <link rel="stylesheet" href="../css/donate-style.css">
+</head>
+<body>
+    <header>
+        <h1>📋 قائمة التبرعات بالملابس</h1>
+        <nav>
+            <a href="../index.html">الرئيسية</a>
+            <a href="../views/donate-clothes.html">تبرع جديد</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>🧥 التبرعات المسجلة:</h2>
+        <div id="donationsList"></div>
+    </section>
+
+    <footer>© 2025 تحدي الخير - جميع الحقوق محفوظة</footer>
+
+    <script>
+        let donations = JSON.parse(localStorage.getItem("donations")) || [];
+        let donationsList = document.getElementById("donationsList");
+
+        if (donations.length === 0) {
+            donationsList.innerHTML = "<p>لا يوجد تبرعات مسجلة بعد.</p>";
+        } else {
+            donations.forEach(donation => {
+                let donationDiv = document.createElement("div");
+                donationDiv.classList.add("donation-item");
+
+                let img = document.createElement("img");
+                img.src = donation.imageUrl ? donation.imageUrl : "images/placeholder.png"; // إذا لم يتم رفع صورة، نستخدم صورة افتراضية
+                img.alt = "صورة الملابس المتبرع بها";
+                img.classList.add("donation-image");
+
+                let details = document.createElement("p");
+                details.innerHTML = `👤 ${donation.donorName} - 📍 ${donation.location} - 📝 ${donation.notes}`;
+
+                donationDiv.appendChild(img);
+                donationDiv.appendChild(details);
+                donationsList.appendChild(donationDiv);
+            });
+        }
+    </script>
+</body>
+</html>
