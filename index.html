@@ -3,9 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giving Tree</title>
+    <title>Ramadan Volunteer Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome for icons (you'd need to add the actual link in a real implementation) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="../index.html" style="text-decoration: none; color: #F9B208;">Giving Hands</a></div>
+            <ul class="nav-links">
+                <li><a href="#opportunities">My volunteers</a></li>               
+                <li><a href="./views/aboutus.html">About Us</a></li>
+                <li><a href="./views/contact-us.html">Contact</a></li>
+                <li><a href="./views/login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
     
+    <header>
+        <h1 style="font-size: 50px;">Giving Hands</h1>
+        <p style="font-size: 30px;">Join us in spreading kindness during the holy month</p>
+        <button class="btn">Get Involved</button>
+    </header>
+    
+    
+    
+    <section id="opportunities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Volunteer Opportunities</h2>
+            </div>
+            <section id="opportunities">
+                <div class="container">
+                    <div id="opportunitiesContainer"></div> <!-- سيتم إدخال البطاقات هنا -->
+                </div>
+            </section>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Volunteer in Ramadan</h2>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Increase in Rewards</h3>
+                    <p>Good deeds are multiplied many times during this blessed month.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Unity</h3>
+                    <p>Strengthen bonds within your community through collective service.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-star-and-crescent"></i>
+                    <h3>Spiritual Growth</h3>
+                    <p>Enhance your spiritual journey through acts of kindness and charity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ramadan Volunteer Hub. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ramadan countdown timer
+        function updateCountdown() {
+            // Set the date we're counting down to (example: next Ramadan)
+            // You'll need to update this date each year
+            const ramadanDate = new Date("March 10, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = ramadanDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById("days").textContent = days.toString().padStart(2, '0');
+            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+            
+            // When countdown is over, show message
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.querySelector(".countdown-container").innerHTML = "<h2>Ramadan Mubarak!</h2><p>The blessed month has arrived.</p>";
+            }
+        }
+        
+        // Update countdown every second
+        updateCountdown();
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        
+        // Prayer times API integration
+        function fetchPrayerTimes() {
+            // This is a placeholder for prayer times API integration
+            // In real implementation, you would fetch from an API like Aladhan API
+            const prayerTimes = {
+                fajr: "4:35 AM",
+                sunrise: "6:12 AM",
+                dhuhr: "12:30 PM",
+                asr: "3:45 PM",
+                maghrib: "6:48 PM",
+                isha: "8:15 PM"
+            };
+            
+            // Create prayer times display
+            const prayerTimesContainer = document.getElementById("prayer-times-container");
+            prayerTimesContainer.innerHTML = `
+                <div class="prayer-times-grid">
+                    <div class="prayer-time">
+                        <h3>Fajr</h3>
+                        <p>${prayerTimes.fajr}</p>
+                    </div>
+                    <div class="prayer-time">
+                        <h3>Sunrise</h3>
+                        <p>${prayerTimes.sunrise}</p>
+                    </div>
+                    <div class="prayer-time">
+                        <h3>Dhuhr</h3>
+                        <p>${prayerTimes.dhuhr}</p>
+                    </div>
+                    <div class="prayer-time">
+                        <h3>Asr</h3>
+                        <p>${prayerTimes.asr}</p>
+                    </div>
+                    <div class="prayer-time">
+                        <h3>Maghrib</h3>
+                        <p>${prayerTimes.maghrib}</p>
+                    </div>
+                    <div class="prayer-time">
+                        <h3>Isha</h3>
+                        <p>${prayerTimes.isha}</p>
+                    </div>
+                </div>
+                <div class="iftar-time">
+                    <h3>Today's Iftar Time</h3>
+                    <p>${prayerTimes.maghrib}</p>
+                </div>
+            `;
+        }
+        
+        // Load prayer times when page loads
+        document.addEventListener("DOMContentLoaded", fetchPrayerTimes);
+        
+        // Form submission
+        const signupForm = document.getElementById("signup-form");
+        signupForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const opportunity = document.getElementById("opportunity").value;
+            const availability = document.getElementById("availability").value;
+            
+            // Here you would typically send this data to a server
+            // For this example, we'll just show a confirmation message
+            alert(`Thank you ${name} for signing up to volunteer! We'll contact you shortly to confirm your participation.`);
+            
+            // Reset form
+            signupForm.reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Dynamic available spots counter
+        function updateAvailableSpots() {
+            const opportunityCards = document.querySelectorAll('.opportunity-card');
+            
+            opportunityCards.forEach(card => {
+                const spotsElement = card.querySelector('.spots');
+                let spots = parseInt(spotsElement.textContent);
+                
+                // Simulate random signups
+                if (Math.random() > 0.8 && spots > 0) {
+                    spots--;
+                    spotsElement.textContent = spots + " spots left";
+                    
+                    // Add urgency message when spots are low
+                    if (spots <= 3) {
+                        spotsElement.style.color = "#ff4d4d";
+                    }
+                }
+            });
+        }
+        
+        // Update available spots every 30 seconds
+        setInterval(updateAvailableSpots, 30000);
+        
+        // Add animation to features on scroll
+        const features = document.querySelectorAll('.feature');
+        
+        function checkScroll() {
+            features.forEach(feature => {
+                const featurePosition = feature.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (featurePosition < screenPosition) {
+                    feature.style.opacity = "1";
+                    feature.style.transform = "translateY(0)";
+                }
+            });
+        }
+        
+        // Initial styles for features
+        features.forEach(feature => {
+            feature.style.opacity = "0";
+            feature.style.transform = "translateY(20px)";
+            feature.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        });
+        
+        // Check scroll position when page loads and on scroll
+        window.addEventListener('load', checkScroll);
+        window.addEventListener('scroll', checkScroll);
+    </script>
+
+    <script src="./js/charities.js"></script>
 </body>
 </html>

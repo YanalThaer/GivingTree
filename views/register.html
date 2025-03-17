@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Registration</title>
+    <link rel="stylesheet" href="../css/register-style.css">
+    <link rel="stylesheet" href="../css/login-style.css">
+</head>
+<body>
+    <div class="registration-container">
+        <h1>Volunteer Registration</h1>
+        <form id="volunteerForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="repassword">Re-type Password</label>
+                <input type="password" id="repassword" name="repassword" required>
+            </div>            
+
+            <button type="submit" class="submit-btn">Register as Volunteer</button>
+        </form>
+        <p class="signup">Don't have an account? <a href="../views/login.html">Login here</a></p>
+
+    <script src="../js/register.js"></script>
+</body>
+</html>
