@@ -54,6 +54,9 @@ header {
     font-size: 2rem;
     font-weight: bold;
 }
+.nav-links a:hover {
+    color: var(--accent);
+    }
 
 nav {
     background-color: var(--light);
@@ -62,14 +65,16 @@ nav {
     top: 0;
     z-index: 100;
 }
-
+.nav-links a:hover {
+    color: var(--accent) !important;
+    }
+    
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15px 20px;
 }
 
 .logo {
@@ -97,6 +102,7 @@ nav {
 .nav-links a:hover {
     color: var(--accent);
 }
+
 
 .btn {
     background-color: var(--light);
@@ -359,6 +365,12 @@ nav {
     color: var(--accent);
     margin-bottom: 20px;
 }
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--primary);
+}
 
 footer {
     background-color: var(--primary);
@@ -379,7 +391,76 @@ footer {
     margin: 0 10px;
     font-size: 1.5rem;
 }
+/* تقليل البادنج في النافبار */
+.navbar-custom {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important; 
+}
+/* تنسيق الـ Header */
+.header-title {
+    font-size: 50px; /* حجم الخط الافتراضي */
+    margin-bottom: 20px; /* تباعد بين العنوان والنص */
+}
 
+.header-subtitle {
+    font-size: 20px; /* حجم الخط الافتراضي */
+    margin-bottom: 30px; /* تباعد بين النص والزر */
+}
+
+.header-button {
+    color: #2C3E50; /* لون النص */
+    font-size: 15px; /* حجم الخط الافتراضي */
+    width: 13%; /* عرض الزر الافتراضي */
+    padding: 10px 20px; /* بادنج داخلي */
+    text-decoration: none; /* إزالة التسطير */
+    border-radius: 5px; /* زوايا مدورة */
+    transition: background-color 0.3s ease; /* تأثير انتقالي */
+}
+
+.header-button:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* لون الخلفية عند التحويم */
+}
+
+
+@media (max-width: 992px) {
+    .navbar-custom {
+        padding-top: 0.5rem; 
+        padding-bottom: 0.5rem; 
+    }
+
+    .navbar-nav {
+        padding-top: 1rem; /* إضافة بادنج صغير للقائمة المنسدلة */
+    }
+
+    .navbar-toggler {
+        margin-top: 0.5rem; /* تحسين موضع زر القائمة المنسدلة */
+    }
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--light);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
 @media (max-width: 768px) {
     .countdown {
         flex-wrap: wrap;
@@ -392,5 +473,122 @@ footer {
     
     .nav-links {
         display: none;
+    }
+}
+@media (max-width: 992px) {
+    .charity-image {
+        margin-top: 200px;
+    }
+    .charity-info{
+        margin-top: 25px;
+    }
+}
+@media (max-width: 768px) {
+    .charity-image {
+        margin-top: 200px;
+    }
+    .charity-info{
+        margin-top: 25px;
+    }
+}
+@media (max-width: 576px) {
+    .charity-image {
+        margin-top: 200px;
+    }
+    .charity-info{
+        margin-top: 25px;
+    }
+}
+/* تحسين تنسيق النص والأزرار للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .details-container {
+        flex-direction: column; /* تغيير اتجاه العناصر إلى عمودي */
+        align-items: center; /* توسيط العناصر */
+    }
+
+    .charity-image {
+        margin-top: 20px; /* إضافة مسافة علوية */
+        text-align: center; /* توسيط الصورة */
+    }
+
+
+
+    .charity-info h2 {
+        font-size: 24px; /* تصغير حجم العنوان */
+    }
+
+    .charity-info p {
+        font-size: 14px; /* تصغير حجم النص */
+    }
+
+    .charity-info h6 {
+        font-size: 16px; /* تصغير حجم العناوين الفرعية */
+    }
+
+    .charity-info button {
+        width: 100%; /* جعل الزر يأخذ العرض الكامل */
+        margin-top: 10px; /* إضافة مسافة علوية */
+    }
+}
+
+
+/* تحسين التنسيق للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 36px; /* تصغير حجم العنوان */
+    }
+
+    .header-subtitle {
+        font-size: 16px; /* تصغير حجم النص */
+    }
+
+    .header-button {
+        width: 50%; /* زيادة عرض الزر */
+        font-size: 14px; /* تصغير حجم الخط */
+    }
+}
+
+@media (max-width: 576px) {
+    .header-title {
+        font-size: 28px; /* تصغير حجم العنوان أكثر */
+    }
+
+    .header-subtitle {
+        font-size: 14px; /* تصغير حجم النص أكثر */
+    }
+
+    .header-button {
+        width: 70%; /* زيادة عرض الزر أكثر */
+        font-size: 12px; /* تصغير حجم الخط أكثر */
+    }
+}
+/* تحسين تنسيق النص والأزرار للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .details-container {
+        flex-direction: column; /* تغيير اتجاه العناصر إلى عمودي */
+        align-items: center; /* توسيط العناصر */
+    }
+
+    .charity-image {
+        margin-top: 200px; /* إضافة مسافة علوية */
+        text-align: center; /* توسيط الصورة */
+    }
+
+
+    .charity-info h2 {
+        font-size: 24px; /* تصغير حجم العنوان */
+    }
+
+    .charity-info p {
+        font-size: 14px; /* تصغير حجم النص */
+    }
+
+    .charity-info h6 {
+        font-size: 16px; /* تصغير حجم العناوين الفرعية */
+    }
+
+    .charity-info button {
+        width: 100%; /* جعل الزر يأخذ العرض الكامل */
+        margin-top: 10px; /* إضافة مسافة علوية */
     }
 }

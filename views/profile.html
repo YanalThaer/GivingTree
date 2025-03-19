@@ -5,70 +5,198 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile - Ramadan Volunteers</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile-style.csss">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
+<style>
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+      .card {
+            background-color: #F9B208;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        .avatar-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: #757575;
+        }
+        .navyy a:hover {
+     color: var(--accent);
+       }
+        
+        .name {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .info-label {
+            width: 80px;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .info-value {
+            flex: 1;
+            font-size: 14px;
+        }
+</style>
 <body>
-    <header>
-        <div class="logo">Ramadan Volunteers</div>
-        <nav>
-            <a href="#">Opportunities</a>
-            <a href="#">About</a>
-            <a href="#">Sign Up</a>
-            <a href="#">Prayer Times</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 shadow-sm navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" style="color: #F9B208; font-weight: bold; font-size: 30px; ">Giving Hands</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item navyy"><a class="nav-link " href="../index.html">Home</a></li>
+                    <li class="nav-item navyy"><a class="nav-link" href="../views/aboutus.html">About Us</a></li>
+                    <li class="nav-item navyy"><a class="nav-link" href="../views/contact-us.html">Contact</a></li>
+                    <li class="nav-item navyy"><a class="nav-link" href="../views/testomonial.html">Testimonials</a></li>
+                    <li class="nav-item navyy "><a class="nav-link" href="../views/login.html" id="dylog">Login</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     
     <div class="container">
-        <div class="profile-header">
-            <h1>Volunteer Profile</h1>
-            <div class="underline"></div>
-        </div>
+    
+
         
-        <div class="profile-container">
-            <div class="profile-sidebar">
-                <div class="profile-image">
-                    <img src="" alt="Profile Picture">
-                </div>
-                <div class="profile-name">Samira Ahmed</div>
-                <div class="profile-status">Active Volunteer</div>
-                
-                
+        <div class="card">
+            <div class="avatar-container">
+                <div class="avatar" id="avatar">JD</div>
+            </div>
+            <div class="name" id="name">Loading...</div>
+            
+            <div class="info-item">
+                <div class="info-label">Email :</div>
+                <div class="info-value" id="email">Loading...</div>
             </div>
             
-            <div class="profile-content">
-               
-                
-                <div class="content-section">
-                    <div class="section-title">
-                        <span class="icon">History</span>
-                        Upcoming Events
-                    </div>
-                    
- 
-                    
-                    <div class="event-card">
-                        <div class="event-date">
-                            <div class="event-day">22</div>
-                            <div class="event-month">Mar</div>
-                        </div>
-                        <div class="event-details">
-                            <h4>Children's Ramadan Workshop</h4>
-                            <p>Community Center • 10:00AM - 12:00PM</p>
-                        </div>
-                    </div>
-                    
-
-                </div>
-                
-             
+            <div class="info-item">
+                <div class="info-label">Phone :</div>
+                <div class="info-value" id="phone">Loading...</div>
             </div>
         </div>
-        
-       
     </div>
-    
     <footer>
-        &copy; 2025 Ramadan Volunteers. All rights reserved.
+        <div class="container">
+            <p>&copy; 2025 Ramadan Volunteer Hub. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
     </footer>
+    <script>
+        // This function would normally fetch data from a server
+        // For demo purposes, we're simulating the data
+        function fetchUserData() {
+            // In a real application, you would fetch from localhost
+            // Example: fetch('http://localhost:3000/api/user')
+            const isLoggedIn = JSON.parse(localStorage.getItem('logined'));
+            console.log(isLoggedIn);
+            if (isLoggedIn) {
+                return userData = {
+                    name: isLoggedIn['firstName'] + " " + isLoggedIn['lastName'],
+                    email: isLoggedIn['email'],
+                    phone: isLoggedIn['phone'],
+                    };
+                }
+            else {
+                return userData = {
+                    name: "",
+                    email: "",
+                    phone: "",
+            }
+        }
+    }
+        
+        // Display the user data
+        function displayUserData() {
+            const userData = fetchUserData();
+            
+            document.getElementById('name').textContent = userData.name;
+            document.getElementById('email').textContent = userData.email;
+            document.getElementById('phone').textContent = userData.phone;
+            
+            // Set avatar initials based on name
+            const initials = userData.name.split(' ')
+                .map(name => name[0])
+                .join('');
+            document.getElementById('avatar').textContent = initials;
+        }
+        
+        // Call the function when the page loads
+        window.onload = displayUserData;
+
+        window.addEventListener('load', checkScroll);
+        window.addEventListener('scroll', checkScroll);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+  });
+
+    // إضافة تأثير التمرير للنافبار
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="../js/home.js"></script>
+
+    
 </body>
 </html>

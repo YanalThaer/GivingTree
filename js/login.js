@@ -35,14 +35,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             
             localStorage.setItem('logined', JSON.stringify(loggedInUser));
 
-            alert('تم تسجيل الدخول بنجاح! سيتم توجيهك إلى لوحة التحكم.');
+            alert('You have successfully logged in!');
 
-            // توجيه المستخدم إلى الصفحة الرئيسية أو لوحة التحكم
             window.location.href = '../index.html';
         } else {
-            alert('كلمة المرور غير صحيحة. حاول مرة أخرى.');
+            alert('The password is incorrect. Try again.');
         }
     } else {
-        alert('المستخدم غير موجود. يرجى التسجيل أولاً.');
+        alert('The user does not exist. Please register first.');
     }
 });

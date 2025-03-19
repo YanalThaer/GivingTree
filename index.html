@@ -3,83 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadan Volunteer Hub</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- Font Awesome for icons (you'd need to add the actual link in a real implementation) -->
+    <title>GivingHands</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+      .navyy a:hover {
+       color: var(--accent);
+}
+
+    </style>
 </head>
+
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo"><a href="../index.html" style="text-decoration: none; color: #F9B208;">Giving Hands</a></div>
-            <ul class="nav-links">
-                <li><a href="./index.html">Home</a></li>               
-                <li><a href="./views/aboutus.html">About Us</a></li>
-                <li><a href="./views/contact-us.html">Contact</a></li>
-                <li><a href="./views/testomonial.html">Testimonials</a></li>
-                <li><a href="./views/login.html" class="login-link">Login</a></li>
-            </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 shadow-sm navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" style="color: #F9B208; font-weight: bold; font-size: 30px; ">Giving Hands</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item navyy"><a class="nav-link " href="../index.html">Home</a></li>
+                    <li class="nav-item navyy"><a class="nav-link" href="../views/aboutus.html">About Us</a></li>
+                    <li class="nav-item navyy"><a class="nav-link" href="../views/contact-us.html">Contact</a></li>
+                    <li class="nav-item navyy"><a class="nav-link" href="../views/testomonial.html">Testimonials</a></li>
+                    <li class="nav-item navyy "><a class="nav-link" href="../views/login.html" id="dylog">Login</a></li>
+
+                </ul>
+            </div>
         </div>
     </nav>
 
-    
-    <header>
-        <h1 style="font-size: 50px;">Giving Hands</h1>
-        <p style="font-size: 20px;">Join us in spreading kindness during the holy month</p>
-        <button class="btn"><a href="./views/login.html" style="text-decoration: none; ">Get Involved</a></button>
+    <header class="text-white text-center py-5" style="background-image: url('../images/tree1.jpg'); background-size: cover; background-position: center; height: 400px;">
+        <div class="container h-100 d-flex flex-column justify-content-center align-items-start">
+            <h1 class="header-title">Giving Hands</h1>
+            <p class="header-subtitle">Join us in spreading kindness during the holy month</p>
+            <a href="../views/login.html" class="btn btn-light header-button">Get Involved</a>
+        </div>
     </header>
-    
-    
-    
-    <section id="opportunities">
+
+    <!-- Volunteer Opportunities -->
+    <section id="opportunities" class="py-5">
         <div class="container">
-            <div class="section-title">
-                <h2>Volunteer Opportunities</h2>
+            <h2 class="text-center mb-4">Volunteer Opportunities</h2>
+            <div class="row" id="opportunitiesContainer">
+                <!-- Cards will be dynamically inserted here -->
             </div>
-            <section id="opportunities">
-                <div class="container">
-                    <div id="opportunitiesContainer"></div> <!-- سيتم إدخال البطاقات هنا -->
-                </div>
-            </section>
         </div>
     </section>
-    
-    <section id="about">
+
+    <!-- Why Volunteer in Ramadan -->
+    <section id="about" class="py-5 bg-light">
         <div class="container">
-            <div class="section-title">
-                <h2>Why Volunteer in Ramadan</h2>
-            </div>
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-hand-holding-heart"></i>
+            <h2 class="text-center mb-4">Why Volunteer in Ramadan</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-hand-holding-heart fa-3x mb-3" style="color: #F9B208;"></i>
                     <h3>Increase in Rewards</h3>
                     <p>Good deeds are multiplied many times during this blessed month.</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-users"></i>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-users fa-3x mb-3" style="color: #F9B208;"></i>
                     <h3>Community Unity</h3>
                     <p>Strengthen bonds within your community through collective service.</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-star-and-crescent"></i>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-star-and-crescent fa-3x mb-3" style="color: #F9B208;"></i>
                     <h3>Spiritual Growth</h3>
                     <p>Enhance your spiritual journey through acts of kindness and charity.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <footer>
-        <div class="container">
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
             <p>&copy; 2025 Ramadan Volunteer Hub. All rights reserved.</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/charities.js"></script>
+    <script src="./js/home.js"></script>
+
 
     <script>
         // Ramadan countdown timer
@@ -251,9 +272,23 @@
         // Check scroll position when page loads and on scroll
         window.addEventListener('load', checkScroll);
         window.addEventListener('scroll', checkScroll);
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+});
+
+        
     </script>
 
     <script src="./js/charities.js"></script>
     <script src="./js/home.js"></script>
+
 </body>
 </html>

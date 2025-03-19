@@ -48,17 +48,13 @@ const charities = [
   // send local storage
   localStorage.setItem('charities', JSON.stringify(charities));
 
-// الحصول على الحاوية التي سيتم عرض الجمعيات فيها
 const opportunitiesContainer = document.getElementById("opportunitiesContainer");
 
-// التحقق مما إذا كانت هناك جمعيات مخزنة
 charities.forEach(charity => {
-    // إنشاء عنصر البطاقة
     const card = document.createElement("div");
     card.classList.add("opportunity-card");
-    card.setAttribute("data-id", charity.id); // تخزين معرف الجمعية داخل `data-id`
+    card.setAttribute("data-id", charity.id); 
 
-    // إضافة جميع الأنشطة كقائمة
     let activitiesList = charity.activities.map(activity => `<li>${activity}</li>`).join("");
 
     card.innerHTML = `
@@ -72,7 +68,7 @@ charities.forEach(charity => {
         <div class="card-footer">
             <div class="location">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>${charity.location}</span>
+                <span >${charity.location}</span>
             </div>
             <div class="contact">
                 <a href="mailto:${charity.email}">Contact</a>
@@ -80,7 +76,6 @@ charities.forEach(charity => {
         </div>
     `;
 
-    // عند الضغط على البطاقة، يتم التوجيه إلى صفحة التفاصيل مع تمرير `id`
     card.addEventListener("click", function () {
         window.location.href = `../views/charity-details.html?id=${charity.id}`;
     });

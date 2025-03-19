@@ -311,7 +311,45 @@ color: var(--accent);
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
+/* جعل النافبار شفافًا */
+nav {
+  background-color: transparent !important; /* شفاف */
+  box-shadow: none; /* إزالة الظل */
+  position: fixed; /* ثابت في الأعلى */
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease; /* تأثير انتقالي */
+}
 
+/* إضافة ظل للنص في النافبار */
+.nav-links a, .logo {
+  color: white !important; /* لون النص أبيض */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* ظل للنص */
+}
+
+/* تغيير لون النافبار عند التمرير */
+nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.9) !important; /* خلفية بيضاء شفافة */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إعادة الظل */
+}
+
+nav.scrolled .nav-links a,
+nav.scrolled .logo {
+  color: var(--primary) !important; /* لون النص يعود إلى الأصلي */
+  text-shadow: none; /* إزالة الظل */
+}
+
+/* تحسين زر "Get Involved" */
+.btn {
+  background-color: rgba(255, 255, 255, 0.9); /* خلفية شفافة */
+  color: var(--primary) !important; /* لون النص */
+  border: none; /* إزالة الحدود */
+  transition: background-color 0.3s ease; /* تأثير انتقالي */
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 1); /* خلفية بيضاء غير شفافة */
+}
 @media (max-width: 768px) {
   .timeline::before {
     left: 20px;

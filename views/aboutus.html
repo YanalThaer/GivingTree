@@ -4,29 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Turning Hunger Into Hope</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
   <link rel="stylesheet" href="../css/about-style.css">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    
-    
+    .navyy a:hover {
+     color: var(--accent);
+}
+
   </style>
 </head>
 <body>
 
 
-  <nav>
-    <div class="nav-container">
-        <div class="logo"><a href="../index.html" style="text-decoration: none; color: #F9B208;">Giving Hands</a></div>
-        <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>               
-            <li><a href="../views/aboutus.html">About Us</a></li>
-            <li><a href="../views/contact-us.html">Contact</a></li>
-            <li><a href="../views/testomonial.html">Testimonials</a></li>
-            <li><a href="../views/login.html" class="login-link">Login</a></li>
-        </ul>
-    </div>
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 shadow-sm navbar-custom">
+  <div class="container">
+      <a class="navbar-brand" href="../index.html" style="color: #F9B208; font-weight: bold; font-size: 30px; ">Giving Hands</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item navyy"><a class="nav-link " href="../index.html">Home</a></li>
+              <li class="nav-item navyy"><a class="nav-link" href="../views/aboutus.html">About Us</a></li>
+              <li class="nav-item navyy"><a class="nav-link" href="../views/contact-us.html">Contact</a></li>
+              <li class="nav-item navyy"><a class="nav-link" href="../views/testomonial.html">Testimonials</a></li>
+              <li class="nav-item navyy"><a class="nav-link" href="../views/login.html" id="dylog">Login</a></li>
+          </ul>
+      </div>
+  </div>
 </nav>
 
   <!-- Page Header -->
@@ -45,7 +55,7 @@
           <h2 class="section-title">Our Story</h2>
           <p>Founded in 2010, FoodShare was established in response to the growing need for food assistance in local communities. What began as a small initiative led by a group of dedicated volunteers has quickly grown into one of the region's most important charitable organizations fighting hunger.</p>
           <p>Over the years, our programs and services have expanded to meet the needs of vulnerable and disadvantaged families while maintaining our core vision of turning hunger into hope through the provision of food packages and sustainable nutrition programs.</p>
-          <p>Today, we work with a network of community partners, food producers, volunteers, and donors to create lasting solutions to food insecurity while addressing immediate needs.</p>
+          <p>Today, we work with a network of community partners in Jordan, food producers, volunteers, and donors to create lasting solutions to food insecurity while addressing immediate needs.</p>
         </div>
         <div class="col-md-6">
           <div class="mission-card mb-4">
@@ -101,6 +111,30 @@
         </div>
     </div>
 </footer>
+
+<script src="../js/home.js"></script>
+<script>
+   window.addEventListener('load', checkScroll);
+        window.addEventListener('scroll', checkScroll);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+  });
+
+    // إضافة تأثير التمرير للنافبار
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
 
