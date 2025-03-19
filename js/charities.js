@@ -77,7 +77,7 @@ charities.forEach(charity => {
     `;
 
     card.addEventListener("click", function () {
-        window.location.href = `../views/charity-details.html?id=${charity.id}`;
+        window.location.href = `views/charity-details.html?id=${charity.id}`;
     });
 
     opportunitiesContainer.appendChild(card);
