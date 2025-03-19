@@ -11,7 +11,7 @@ const charities = [
        "Ramadan Expiation Program",
        "Monthly Food Parcel Program"] ,
   
-  image: "images\Iftar_Meal_Program_for_Jordan_and_Gaza.jpeg",
+  image: "images/Iftar_Meal_Program_for_Jordan_and_Gaza.jpeg",
   
       description: "Tkiyet Um Ali is a leading humanitarian organization focused on eradicating hunger and food insecurity across Jordan. They provide food assistance and nutritional support to families in need, as well as organizing seasonal campaigns to provide food during Ramadan and other important events. Tkiyet Um Ali also empowers communities by partnering with local organizations to improve health, education, and economic conditions for underserved populations, fostering long-term self-reliance."
   },
@@ -25,7 +25,7 @@ const charities = [
           website: "https://www.jordanriver.jo",
           activities: ["Protect a Child", "Support Local Women in Our Community"],
   
-          image: "images\Protect_a_Child.jpg",
+          image: "images/Protect_a_Child.jpg",
   
           description: "Jordan River Foundation works towards community development and empowerment. Support a child by participating in social and psychological empowerment activities at the Queen Rania Family and Child Center, including awareness programs on protection and abuse prevention, self-confidence building, life skills, emotional stability, and financial literacy. This is achieved through 20 interactive sessions featuring sports, arts, and cultural activities, supervised by child protection experts. Empower a woman by providing her with the necessary training to support her family and generate income. This includes professional and technical training in life skills, entrepreneurship, handicrafts, and culinary arts over a 30-day preparation period to equip her for the job market."
       },
@@ -38,7 +38,7 @@ const charities = [
       email: "info@sanahyakaraman.org",
       website: "https://www.sanahyakaraman.org",
       activities: ["Clothing Project", "Food Support Project.jpg"],
-           image: "images\Clothing_Project.jpg",
+           image: "images/Clothing_Project.jpg",
   
       description: "Sanahya Karaman Charity Association is a non-profit organization based in Jordan that focuses on supporting underprivileged families by providing essential humanitarian aid. The association organizes seasonal campaigns such as 'Winter Mercy' to distribute warm clothing, blankets, and heating supplies to those in need. Additionally, it offers food packages to ensure a better quality of life for vulnerable communities. Through its dedicated initiatives, Sanahya Karaman empowers individuals and fosters a culture of giving. Volunteers and donors are encouraged to contribute and make a meaningful impact."
   }
